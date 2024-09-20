@@ -4,6 +4,7 @@
 <title>TODO List</title>
  <style>
     body {
+        
         justify-content: center;
         align-items: center;
         background-color: #FFFFE0;
@@ -12,6 +13,7 @@
     .container {
 background-color: #FFB6C1;
 padding: 20px;
+border-radius: 20px;
 text-align: center;
  width: 300px;
 }
@@ -46,10 +48,6 @@ color:#6e4646;
     <label id="clo">FOOD</label>
     <input type="checkbox" id="checkbox3" onchange="todo('checkbox3', 'clo')">
 </div>
-
-
-
-
 
 
 <script>
