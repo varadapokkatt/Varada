@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Simulator</title>
+</head>
+<body>
+    <p id="balance"><b>Balance:</b> 1000</p>
+
+    <h3>Deposit</h3>
+    <input type="number" id="deposit" placeholder="Amount to deposit">
+    <button onclick="deposit()">Deposit</button>
+
+    <h3>Withdraw</h3>
+    <input type="number" id="withdraw" placeholder="Amount to withdraw">
+    <button onclick="withdraw()">Withdraw</button>
+
+    <h3>Check Balance</h3>
+    <button onclick="checkBalance()">Check Balance</button>
+
+    <p id="result"></p>
+
+    <script>
+        let balance = 1000;
+
+        function deposit() {
+            let deposit = Number(document.getElementById("deposit").value);
+            if (deposit > 0) {
+                balance += deposit;
+                document.getElementById("result").innerHTML = "Deposited: " + deposit;
+            } else {
+                document.getElementById("result").innerHTML = "Error: Please enter a valid amount.";
+            }
+            updateBalance();
+        }
+
+        function withdraw() {
+            let withdraw = Number(document.getElementById("withdraw").value);
+            if (withdraw > 0 && withdraw <= balance) {
+                balance -= withdraw;
+                document.getElementById("result").innerHTML = "Withdrew: " + withdraw;
+            } else if (withdraw > balance) {
+                document.getElementById("result").innerHTML = "Insufficient balance";
+            } else {
+                document.getElementById("result").innerHTML = "Error";
+            }
+            updateBalance();
+        }
+
+        function checkBalance() {
+            document.getElementById("result").innerHTML = "Current Balance: " + balance;
+        }
+
+        function updateBalance() {
+            document.getElementById("balance").innerHTML = "<b>Balance:</b> " + balance;
+        }
+    </script>
+</body>
+</html>
