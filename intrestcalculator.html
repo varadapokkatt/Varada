@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="Principal amount" id="Principal">
+    <input type="number" placeholder=" Rate of interest" id="Rate">
+    <input type="number" placeholder="time in years" id="time">
+    <input type="button" value="intrest" id="button" onclick="intrest()">
+    <p id="output"></p>
+</body>
+<script>
+    function intrest(){
+    let a=document.getElementById("Principal").value;
+    let b=document.getElementById("Rate").value;
+    let c=document.getElementById("time").value;
+    document.getElementById("output").innerHTML=(a*b*c)/100
+}
+</script>
+</html>
